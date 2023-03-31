@@ -8,19 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    //MARK: - PROPERTY
+    
+    var fruits: [FruitModel] = fruitsData //Fetching Data from Local FruitData file with shape of FruitModel Array
+    
+    //MARK: - BODY CONTENT
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world")
-        }
-        .padding()
-    }
+        
+        //MARK: - NAVIGATION FOR LIST & FOREACH
+        NavigationView {
+            //MARK: - LISTING ALL DATA FROM FruitRowComponent()
+            List {
+                
+                //Rendering All Data from Local FruitData files with shape of FruitModel Array
+                ForEach(fruits.shuffled()) { item in
+                    FruitRowComponent(fruit: item)
+                        .padding(.vertical, 4)
+                }//: - FOREACH LOOP FOR RENDERING ALL ITEMS AVAILABLE from Local FruitData
+                
+            }//: - LIST ALL DATA FROM FruitRowComponent()
+            .listStyle(.plain)
+            .navigationTitle("Fruits")
+        }//: - NAVIGATIONVIEW FOR LIST & FOREACH
+        
+    }//: - BODY CONTENT
 }
 
+//MARK: - PREVIEW
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        //Passing fruitsData from Local FruitData file
+        ContentView(fruits: fruitsData)
     }
 }
