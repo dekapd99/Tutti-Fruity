@@ -14,6 +14,7 @@ struct OnBoardingView: View {
     
     //MARK: - BODY CONTENT
     var body: some View {
+        
         //MARK: - TABVIEW FOR INITIALIZE FRUIT DATA
         TabView {
             
@@ -24,6 +25,7 @@ struct OnBoardingView: View {
             
         }//: - TABVIEW FOR INITIALIZE FRUIT DATA
         .tabViewStyle(PageTabViewStyle())
+        
     }//: - BODY CONTENT
 }
 
