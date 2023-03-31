@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct StartButtonComponent: View {
-    //MARK: - PROPERTIES
+    //MARK: - APPSTORAGE PROPERTIES
+    //Integrate AppStorage Properties from Tutti_FruityApp
+    @AppStorage("isOnboarding") var isOnboarding: Bool?
     
     //MARK: - BODY CONTENT
     var body: some View {
         //BUTTON: START COMPONENT
         Button(action: {
-            print("Exit the onboarding")
+            /**
+             * If the Start Button Clicked
+             * Change the AppStorage (isOnboarding) Value to FALSE
+             * So The OnBoardingView is NO LONGER VISIBLE to the User
+             */
+            isOnboarding = false
         }) {
             //HSTACK TEXT BUTTON
             HStack(spacing: 8) {
