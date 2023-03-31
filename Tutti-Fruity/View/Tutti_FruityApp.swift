@@ -11,7 +11,7 @@ import SwiftUI
 struct Tutti_FruityApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OnBoardingView()
         }
     }
 }
