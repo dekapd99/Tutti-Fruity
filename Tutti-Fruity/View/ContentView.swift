@@ -22,8 +22,11 @@ struct ContentView: View {
                 
                 //Rendering All Data from Local FruitData files with shape of FruitModel Array
                 ForEach(fruits.shuffled()) { item in
-                    FruitRowComponent(fruit: item)
-                        .padding(.vertical, 4)
+                    //MARK: - NAVIGATIONLINK FOREACH ITEM ON THE LIST
+                    NavigationLink(destination: FruitDetailView(fruit: item)) {
+                        FruitRowComponent(fruit: item)
+                            .padding(.vertical, 4)
+                    }//: - NAVIGATIONLINK FOREACH ITEM ON THE LIST
                 }//: - FOREACH LOOP FOR RENDERING ALL ITEMS AVAILABLE from Local FruitData
                 
             }//: - LIST ALL DATA FROM FruitRowComponent()
