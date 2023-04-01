@@ -21,6 +21,7 @@ struct ContentView: View {
             List {
                 
                 //Rendering All Data from Local FruitData files with shape of FruitModel Array
+                //SHUFFLED RANDOM DATA
                 ForEach(fruits.shuffled()) { item in
                     //MARK: - NAVIGATIONLINK FOREACH ITEM ON THE LIST
                     NavigationLink(destination: FruitDetailView(fruit: item)) {
