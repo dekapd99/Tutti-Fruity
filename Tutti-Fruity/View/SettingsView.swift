@@ -12,6 +12,9 @@ struct SettingsView: View {
     //Property Storing whether the SettingsView currently presented on the screen and the method to let us Dismissed the View immediatley
     @Environment(\.presentationMode) var presentationMode
     
+    //isOnboarding = false means We Set the OnBoarding Screen to be not visible for the very first time the user launches our apps (Tutti Fruity)
+    @AppStorage("isOnboarding") var isOnboarding: Bool = false
+    
     //MARK: - BODY CONTENT
     var body: some View {
         
@@ -21,7 +24,7 @@ struct SettingsView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
                     
-                    //MARK: - GROUPBOX SECTION FOR LABEL, LOGO & APPS DESCRIPTION
+                    //MARK: - GROUPBOX SECTION 1 FOR LABEL, LOGO & APPS DESCRIPTION
                     GroupBox(
                         //MARK: - REUSABLE LABEL COMPONENT
                         label:
@@ -41,9 +44,40 @@ struct SettingsView: View {
                         }
                     }//: - GROUPBOX SECTION FOR LABEL, LOGO & APPS DESCRIPTION
                     
-                    //MARK: - SECTION 2
+                    //MARK: - GROUPBOX SECTION 2 RESET ONBOARDING
+                    GroupBox(
+                        //MARK: - REUSABLE LABEL COMPONENT
+                        label:
+                            SettingLabelComponent(labelText: "Customization", labelIcon: "paintbrush")
+                    ) { //: - REUSABLE LABEL COMPONENT
+                        Divider().padding(.vertical, 4)
+                        
+                        Text("If you wish, you can restart the application by toggle the switch in this box. That way it starts onboarding process and you will see the welcome screen again.")
+                            .padding(.vertical, 8)
+                            .frame(minHeight: 60)
+                            .layoutPriority(1)
+                            .font(.footnote)
+                            .multilineTextAlignment(.leading)
+                        
+                        Toggle(isOn: $isOnboarding) {
+                            if isOnboarding == true {
+                                Text("Restarted".uppercased())
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.green)
+                            } else {
+                                Text("Restart".uppercased())
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.secondary)
+                            }
+                        }//: - Toggle OnBoarding
+                        .padding()
+                        .background(
+                            Color(UIColor.tertiarySystemBackground)
+                                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        )//: - Background Color
+                    }//: - GROUPBOX SECTION 2 RESET ONBOARDING
                     
-                    //MARK: - SECTION 3
+                    //MARK: - GROUPBOX SECTION 3 FOR APPLICATION INFO
                     GroupBox(
                         //MARK: - REUSABLE LABEL COMPONENT
                         label:
@@ -58,7 +92,7 @@ struct SettingsView: View {
                         SettingRowComponent(name: "LinkedIn", linkLabel: "Deka Primatio Deandra", linkDestination: "linkedin.com/in/deka-primatio-deandra-5487061aa/")
                         SettingRowComponent(name: "SwiftUI", content: "4.0")
                         SettingRowComponent(name: "Version", content: "1.1.0")
-                    }//: - GROUPBOX SECTION FOR APPLICATION INFO
+                    }//: - GROUPBOX SECTION 3 FOR APPLICATION INFO
                     
                 }//: - VSTACK
                 .navigationBarTitle(Text("Settings"), displayMode: .large)

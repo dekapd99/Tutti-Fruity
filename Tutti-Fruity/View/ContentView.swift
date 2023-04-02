@@ -48,6 +48,7 @@ struct ContentView: View {
             )//: - NAVIGATIONBARITEMS FOR BUTTON SETTINGS
             
         }//: - NAVIGATIONVIEW FOR LIST & FOREACH
+        .navigationViewStyle(StackNavigationViewStyle()) //For iPad View
         
     }//: - BODY CONTENT
 }
