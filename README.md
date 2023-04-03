@@ -6,7 +6,7 @@
   <p>Tutti Fruity</p>
 </h1>
 
-Tutti Fruity adalah Aplikasi iOS (Travel Dairy Digital) yang menyediakan berbagai informasi tempat-tempat baru mulai dari tempat rekreasi, restoran, cafe, mall, tempat olahraga sampai tempat untuk healing.
+Tutti Fruity adalah Aplikasi iOS pengenalan nutrisi buah-buahan yang datanya diambil dari API [fruitvice.com](https://fruityvice.com/#1) (localized data).
 
 ### Preview
 <p align="center">
@@ -21,7 +21,7 @@ Tutti Fruity adalah Aplikasi iOS (Travel Dairy Digital) yang menyediakan berbaga
 Berikut struktur file dan folder pada Tutti Fruity:
 
     .
-    ├── Tutti_Fruity.swift          # Root Project: Konfigurasi ContentView
+    ├── Tutti_Fruity.swift      # Root Project: Konfigurasi ContentView
     ├── ContentView.swift       # Tampilan Home Page
     ├── Assets                  # Aset Logo & Gambar
     ├── DetailPageView.swift    # Tampilan Detail Page
@@ -44,16 +44,17 @@ Berikut struktur file dan folder pada Tutti Fruity:
 ## Features:
 
 * Reusable Components
-* Photo Picker with PhotosUI (Upload Images)
-* Grid Layout (Horizontal)
 * All Stacks (HStack, VStack, ZStack)
-* All ScrollView (Horizontal & Vertical)
-* Rating with Mask
-* Slideshow with TabView
-* Search Bar
-* Basic Navigations with Navigation Link
-* Declarative UI with @State & @Binding
-* Importation Assets from Sketch for Image Assets
+* ScrollView (Vertical)
+* GroupBox
+* ListView
+* OnBoarding Screen
+* Basic Storage Session with @AppStorage
+* Declarative UI with @State
+* URL Link
+* Restard Session with Toggle
+* Importation Assets from Internet for Image Assets & Color Assets
+* Localized API Fruit Data
 
 <!-- Used Tools -->
 ## Build With:
@@ -61,6 +62,7 @@ Berikut struktur file dan folder pada Tutti Fruity:
 * [Swift](https://www.swift.org/documentation/)
 * [SwiftUI](https://developer.apple.com/documentation/swiftui/)
 * [Xcode](https://developer.apple.com/xcode/)
+* [Fruit Data](https://fruityvice.com/#1)
 
 <!-- How to Install -->
 ## Installation
@@ -82,6 +84,6 @@ Deka
 
 DISCLAIMER: ASSETS ARE USED FOR EDUCATION PURPOSE ONLY, NOT FOR COMMERCIAL PURPOSES
 
-Assets Source: [SF SYMBOLS 4 ICON](https://developer.apple.com/sf-symbols/)
+Assets Source: [Image](google.com) & [SF SYMBOLS 4 ICON](https://developer.apple.com/sf-symbols/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
