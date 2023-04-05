@@ -21,24 +21,29 @@ Tutti Fruity adalah Aplikasi iOS pengenalan nutrisi buah-buahan yang datanya dia
 Berikut struktur file dan folder pada Tutti Fruity:
 
     .
-    ├── Tutti_Fruity.swift      # Root Project: Konfigurasi ContentView
-    ├── ContentView.swift       # Tampilan Home Page
-    ├── Assets                  # Aset Logo & Gambar
-    ├── DetailPageView.swift    # Tampilan Detail Page
-    ├── Component               # Component: Berisikan Reusable Component (Card, Search Bar, dan Text Field)
-    │   ├── CategoryCard.swift  # Berisikan Komponen Category Card (DetailPageView)
-    │   ├── Slideshow.swift     # Berisikan Komponen Slideshow (DetailPageView)
-    │   ├── searchBar.swift     # Berisikan Komponen SearchBar (ContentView)
-    │   ├── scoringCard.swift   # Berisikan Komponen ScoringCard (ContentView)
-    │   ├── locationCard.swift  # Berisikan Komponen LocationCard Static (ContentView)
-    │   ├── Card.swift          # Berisikan Komponen MainCard Dynamic (ContentView)
-    │   ├── Rating.swift        # Berisikan Komponen Rating (DetailPageView)
-    │   ├── PhotoPicker.swift   # Berisikan Komponen Photo Picker (DetailPageView)
-    │   └── TripBuddy.swift     # Berisikan Komponen TextField (DetailPageView)
+    ├── Assets                              # Aset Warna, Logo & Gambar
+    ├── Data                    
+    │   └── FruitData.swift                 # Berisikan Static Local Data Variable
     │
-    └── Model                   # Berisikan Data Type Declaration & List Of Data
-        ├── CategoryModel.swift # Berisikan Data Type & List of Data for Category Card (DetailPageView)
-        └── MainCard.swift      # Berisikan Data Type & List of Data for Main Card (ContentView)
+    ├── Model                   
+    │   └── FruitModel.swift                # Berisikan Fruit Local Data Type Declaration
+    │
+    ├── Component                   
+    │   ├── FruitCardComponent.swift        # Berisikan Komponen Fruit Onboarding Card (OnBoardingView)
+    │   ├── StartButtonComponent.swift      # Berisikan Komponen Start Button (OnBoardingView)
+    │   ├── FruitRowComponent.swift         # Berisikan Komponen Fruit Row (ContentView)
+    │   ├── FruitHeaderComponent.swift      # Berisikan Komponen Fruit Header (FruitDetailView)
+    │   ├── SourceLinkComponent.swift       # Berisikan Komponen Source Link (FruitDetailView)
+    │   ├── FruitNutrientsComponent.swift   # Berisikan Komponen Fruit Nutrient Value (FruitDetailView)
+    │   ├── SettingLabelComponent.swift     # Berisikan Komponen Settings Label (SettingsView)
+    │   └── SettingRowComponent.swift       # Berisikan Komponen Settings Row (SettingsView)
+    │
+    └── View                     
+        ├── OnBoardingView.swift            # Tampilan OnBoarding Page
+        ├── Tutti_Fruity.swift              # Root Project: Konfigurasi ContentView
+        ├── ContentView.swift               # Tampilan Home Page
+        ├── FruitDetailView.swift           # Tampilan Detail Page for Each Fruit
+        └── SettingsView.swift              # Tampilan Halaman Setting
 
 <!-- List of Features -->
 ## Features:
